@@ -1,0 +1,1155 @@
+<breeds xmlns="urn:1">
+  <breed name="Abyssinian" code="abyssinian" xmlns="">
+    <aliases>
+      <alias>abyssinian</alias>
+      <alias>abissinskaya</alias>
+      <alias>abissinskaya-koshka</alias>
+      <alias>abyssinian_cat</alias>
+      <alias>abissinskaja_koshka_solnca_blik_i_zvezd_mercane</alias>
+    </aliases>
+  </breed>
+  <breed name="Aegean" code="aegean" xmlns="">
+    <aliases>
+      <alias>aegean</alias>
+      <alias>aegean-cat</alias>
+      <alias>egejskaya-koshka</alias>
+      <alias>ehgejskaja_koshka_vse_osobennosti_porody_foto_i_video</alias>
+    </aliases>
+  </breed>
+  <breed name="American Curl" code="american curl" xmlns="">
+    <aliases>
+      <alias>american curl</alias>
+      <alias>american-curl</alias>
+      <alias>american_curl</alias>
+      <alias>amerikanskij-kerl</alias>
+      <alias>amerikanskiykerl</alias>
+      <alias>amerikanskij_kerl</alias>
+      <alias>amerikanskij_kerl_dusha_koshachej_kompanii</alias>
+      <alias>amerikanskiy-kerl</alias>
+    </aliases>
+  </breed>
+  <breed name="American Bobtail" code="american bobtail" xmlns="">
+    <aliases>
+      <alias>american bobtail</alias>
+      <alias>american-bobtail</alias>
+      <alias>american_bobtail</alias>
+      <alias>amerikanskiybobteyl</alias>
+      <alias>amerikanskij_bobtejl</alias>
+      <alias>amerikanskiy-bobtail</alias>
+    </aliases>
+  </breed>
+  <breed name="American Shorthair" code="american shorthair" xmlns="">
+    <aliases>
+      <alias>american shorthair</alias>
+      <alias>american-shorthair</alias>
+      <alias>american_shorthair</alias>
+      <alias>american_shorthair_cat</alias>
+      <alias>amerikanskayajestkosherstnaya</alias>
+      <alias>amerikanskaja_korotkosherstnaja_koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="American Wirehair" code="american wirehair" xmlns="">
+    <aliases>
+      <alias>american wirehair</alias>
+      <alias>american-wirehair</alias>
+      <alias>american_wirehair</alias>
+      <alias>american_haired_cat</alias>
+      <alias>amerikanskaja_zhestkosherstnaja_koshka</alias>
+      <alias>amerikanskaja_zhestkosherstnaja_koshka_unikum_iz_jorka</alias>
+    </aliases>
+  </breed>
+  <breed name="Arabian Mau" code="arabian mau" xmlns="">
+    <aliases>
+      <alias>arabian mau</alias>
+      <alias>arabian-mau</alias>
+      <alias>arabian_mau</alias>
+      <alias>aravijskij_mau</alias>
+      <alias>araviyskiy-mau</alias>
+    </aliases>
+  </breed>
+  <breed name="Australian Mist" code="australian mist" xmlns="">
+    <aliases>
+      <alias>australian mist</alias>
+      <alias>australian-mist</alias>
+      <alias>australian_mist</alias>
+      <alias>avstralijskaya-dyimchataya-koshka-avstralijskij-mist</alias>
+      <alias>avstralijskij_mist</alias>
+      <alias>avstralijskaja_dymchataja_koshka_mist_ili_miks</alias>
+      <alias>avstraliyskiy-mist</alias>
+    </aliases>
+  </breed>
+  <breed name="Asian" code="asian" xmlns="">
+    <aliases>
+      <alias>asian</alias>
+      <alias>aziatskaja_koshka_cvetnoe_velikolepie</alias>
+    </aliases>
+  </breed>
+  <breed name="Asian Semi-longhair" code="asian semi-longhair" xmlns="">
+    <aliases>
+      <alias>asian semi longhair</alias>
+      <alias>asian-semi-longhair</alias>
+      <alias>asian_semi_longhair</alias>
+      <alias>asian semi-longhair</alias>
+    </aliases>
+  </breed>
+  <breed name="Balinese" code="balinese" xmlns="">
+    <aliases>
+      <alias>balinese</alias>
+      <alias>balinese_cat</alias>
+      <alias>balinez</alias>
+      <alias>balinezijskaya-balinez</alias>
+      <alias>balinez_zhizn_v_ritme_legonga</alias>
+      <alias>balineziyskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Bambino" code="bambino" xmlns="">
+    <aliases>
+      <alias>bambino</alias>
+      <alias>bambino-koshka-taksa</alias>
+      <alias>bambino_top_top_topaet_malysh</alias>
+    </aliases>
+  </breed>
+  <breed name="Bengal" code="bengal" xmlns="">
+    <aliases>
+      <alias>bengal</alias>
+      <alias>bengal_cat</alias>
+      <alias>bengalskayakoshka</alias>
+      <alias>bengalskaya-koshka</alias>
+      <alias>bengalskaya-koshka-bengal</alias>
+      <alias>bengalskaja_koshka_dikaja_roskosh_klassa_ljuks</alias>
+      <alias>safari</alias>
+    </aliases>
+  </breed>
+  <breed name="Birman" code="birman" xmlns="">
+    <aliases>
+      <alias>birman</alias>
+      <alias>birmanskaya-koshka</alias>
+      <alias>sacred-birman-cat</alias>
+      <alias>birmanskaya</alias>
+      <alias>svjashhennaja_birmanskaja_koshka_istinnoe_voploshhenie_bezmjatezhnosti</alias>
+    </aliases>
+  </breed>
+  <breed name="Bombay" code="bombay" xmlns="">
+    <aliases>
+      <alias>bombay</alias>
+      <alias>bombay_cat</alias>
+      <alias>bombejskaya-koshka</alias>
+      <alias>bombey</alias>
+      <alias>bombejskaja_koshka</alias>
+      <alias>bombejskaja_koshka_v_mechtakh_o_solnechnykh_dzhungljakh</alias>
+      <alias>bombeyskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Brazilian Shorthair" code="brazilian shorthair" xmlns="">
+    <aliases>
+      <alias>brazilian shorthair</alias>
+      <alias>brazilian-shorthair</alias>
+      <alias>brazilian_shorthair</alias>
+      <alias>brazilskaya-korotkosherstnaya-koshka</alias>
+      <alias>brazilskaja_korotkosherstnaja_koshka</alias>
+      <alias>brazilskaja_korotkosherstnaja_koshka_senora_gatu</alias>
+    </aliases>
+  </breed>
+  <breed name="British Semi-longhair" code="british semi-longhair" xmlns="">
+    <aliases>
+      <alias>british semi longhair</alias>
+      <alias>british-semi-longhair</alias>
+      <alias>british_semi_longhair</alias>
+      <alias>british semi-longhair</alias>
+    </aliases>
+  </breed>
+  <breed name="British Shorthair" code="british shorthair" xmlns="">
+    <aliases>
+      <alias>british shorthair</alias>
+      <alias>british-shorthair</alias>
+      <alias>british_shorthair</alias>
+      <alias>britanskayakorotkosherstnaya</alias>
+      <alias>britanskaya-koshka</alias>
+      <alias>britanskaya-korotkosherstnaya-koshka</alias>
+      <alias>britanskie_koshki_uverennoj_postupju_k_vershine_slavy</alias>
+      <alias>okrasy_britanskikh_koshek_s_foto_i_opisaniem</alias>
+    </aliases>
+  </breed>
+  <breed name="British Longhair" code="british longhair" xmlns="">
+    <aliases>
+      <alias>british longhair</alias>
+      <alias>british-longhair</alias>
+      <alias>british_longhair</alias>
+      <alias>british_longhair_cat</alias>
+    </aliases>
+  </breed>
+  <breed name="Burmese" code="burmese" xmlns="">
+    <aliases>
+      <alias>burmese</alias>
+      <alias>burma</alias>
+      <alias>burmanskaya_cat</alias>
+      <alias>burmanskayakoshka</alias>
+      <alias>burmanskaya</alias>
+      <alias>burmanskaja_koshka_magija_vostoka_v_glubine_mercajushhikh_glaz</alias>
+      <alias>burmanskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Burmilla" code="burmilla" xmlns="">
+    <aliases>
+      <alias>burmilla</alias>
+      <alias>burmilla_longhair</alias>
+      <alias>burmilla-shorthair</alias>
+      <alias>burmilla_sportsmenka_vsja_iz_shelka_i_prosto_krasavica</alias>
+    </aliases>
+  </breed>
+  <breed name="California Spangled" code="california spangled" xmlns="">
+    <aliases>
+      <alias>california spangled</alias>
+      <alias>california-spangled</alias>
+      <alias>california_spangled</alias>
+      <alias>california-shining-cat</alias>
+      <alias>kaliforniyskayasiyayuschaya</alias>
+      <alias>kalifornijskaya-siyayushhaya-koshka</alias>
+      <alias>kalifornijskaja_sijajushhaja_koshka_ne_sudite_po_odezhke</alias>
+    </aliases>
+  </breed>
+  <breed name="Chantilly-Tiffany" code="chantilly-tiffany" xmlns="">
+    <aliases>
+      <alias>chantilly tiffany</alias>
+      <alias>chantilly-tiffany</alias>
+      <alias>chantilly_tiffany</alias>
+      <alias>tiffany</alias>
+      <alias>shantili-tiffani</alias>
+      <alias>shantili_tiffani</alias>
+    </aliases>
+  </breed>
+  <breed name="Chartreux" code="chartreux" xmlns="">
+    <aliases>
+      <alias>chartreux</alias>
+      <alias>shartrez</alias>
+      <alias>shartez-kartezianskaya-koshka</alias>
+      <alias>shartrez_bogema_koshachego_mira</alias>
+    </aliases>
+  </breed>
+  <breed name="Cheetoh" code="cheetoh" xmlns="">
+    <aliases>
+      <alias>cheetoh</alias>
+    </aliases>
+  </breed>
+  <breed name="Colorpoint Shorthair" code="colorpoint shorthair" xmlns="">
+    <aliases>
+      <alias>colorpoint shorthair</alias>
+      <alias>colorpoint-shorthair</alias>
+      <alias>colorpoint_shorthair</alias>
+    </aliases>
+  </breed>
+  <breed name="Cornish Rex" code="cornish rex" xmlns="">
+    <aliases>
+      <alias>cornish rex</alias>
+      <alias>cornish-rex</alias>
+      <alias>cornish_rex</alias>
+      <alias>kornish-reks</alias>
+      <alias>kornish-reks-kornish-kornuolskij-reks</alias>
+      <alias>kornish_reks_shubka_volnuetsja_raz_shubka_volnuetsja_dva</alias>
+    </aliases>
+  </breed>
+  <breed name="Cymric, or Manx Longhair" code="cymric, or manx longhair" xmlns="">
+    <aliases>
+      <alias>cymric, or manx longhair</alias>
+      <alias>cymric,-or-manx-longhair</alias>
+      <alias>cymric,_or_manx_longhair</alias>
+      <alias>cymric</alias>
+      <alias>kimrik</alias>
+      <alias>kimrik_istorija_vneshnost_kharakter_i_zdorove</alias>
+      <alias>kimrik_rysenok_s_ostrova_mehn</alias>
+    </aliases>
+  </breed>
+  <breed name="Cyprus" code="cyprus" xmlns="">
+    <aliases>
+      <alias>cyprus</alias>
+    </aliases>
+  </breed>
+  <breed name="Devon Rex" code="devon rex" xmlns="">
+    <aliases>
+      <alias>devon rex</alias>
+      <alias>devon-rex</alias>
+      <alias>devon_rex</alias>
+      <alias>devon-reks</alias>
+      <alias>devon_reks_skazochnyj_zverek_rodom_iz_bakfastleja</alias>
+    </aliases>
+  </breed>
+  <breed name="Donskoy, or Don Sphynx" code="donskoy, or don sphynx" xmlns="">
+    <aliases>
+      <alias>donskoy, or don sphynx</alias>
+      <alias>donskoy,-or-don-sphynx</alias>
+      <alias>donskoy,_or_don_sphynx</alias>
+      <alias>don_sphynx</alias>
+      <alias>donskoj-sfinks</alias>
+      <alias>donskoysfinks</alias>
+      <alias>don-sphynx</alias>
+      <alias>donskoj_sfinks_ne_smushhajas_nagoty</alias>
+      <alias>donskoy-sfinks</alias>
+    </aliases>
+  </breed>
+  <breed name="Dwarf cat, or Dwelf" code="dwarf cat, or dwelf" xmlns="">
+    <aliases>
+      <alias>dwarf cat, or dwelf</alias>
+      <alias>dwarf-cat,-or-dwelf</alias>
+      <alias>dwarf_cat,_or_dwelf</alias>
+    </aliases>
+  </breed>
+  <breed name="Egyptian Mau" code="egyptian mau" xmlns="">
+    <aliases>
+      <alias>egyptian mau</alias>
+      <alias>egyptian-mau</alias>
+      <alias>egyptian_mau</alias>
+      <alias>egipetskayamau</alias>
+      <alias>egipetskaya-mau</alias>
+      <alias>egipetskaja_mau</alias>
+      <alias>egipetskaja_mau_vzgljad_iz_glubiny_vekov</alias>
+    </aliases>
+  </breed>
+  <breed name="European Shorthair" code="european shorthair" xmlns="">
+    <aliases>
+      <alias>european shorthair</alias>
+      <alias>european-shorthair</alias>
+      <alias>european_shorthair</alias>
+      <alias>celtic-cat-european-shorthair</alias>
+      <alias>european_sh</alias>
+      <alias>evropeyskayakorotkosherstnaya</alias>
+      <alias>keltskaya-koshka-evropejskaya-korotkosherstnaya</alias>
+      <alias>evropejskaja_korotkosherstnaja_koshka_nasledie_keltov</alias>
+    </aliases>
+  </breed>
+  <breed name="Exotic Shorthair" code="exotic shorthair" xmlns="">
+    <aliases>
+      <alias>exotic shorthair</alias>
+      <alias>exotic-shorthair</alias>
+      <alias>exotic_shorthair</alias>
+      <alias>ekzot</alias>
+      <alias>exotic</alias>
+      <alias>exotic-shorthair-cat</alias>
+      <alias>ekzoticheskaya-korotkosherstnaya-koshka-ekzot</alias>
+      <alias>ehkzoticheskaja_korotkosherstnaja_koshka_pljushevyj_sindrom</alias>
+      <alias>ekzoticheskaya-korotkosherstnaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Foldex" code="foldex" xmlns="">
+    <aliases>
+      <alias>foldex</alias>
+    </aliases>
+  </breed>
+  <breed name="German Rex" code="german rex" xmlns="">
+    <aliases>
+      <alias>german rex</alias>
+      <alias>german-rex</alias>
+      <alias>german_rex</alias>
+      <alias>german-reks</alias>
+      <alias>nemeckiyreks</alias>
+      <alias>german-reks-nemeczkij-reks-prusskij-reks</alias>
+      <alias>nemeckij_reks</alias>
+      <alias>nemetskiy-reks</alias>
+    </aliases>
+  </breed>
+  <breed name="Havana Brown" code="havana brown" xmlns="">
+    <aliases>
+      <alias>havana brown</alias>
+      <alias>havana-brown</alias>
+      <alias>havana_brown</alias>
+      <alias>gavana</alias>
+      <alias>havana</alias>
+      <alias>gavana_braun_shokoladka_s_fistashkami</alias>
+    </aliases>
+  </breed>
+  <breed name="Highlander" code="highlander" xmlns="">
+    <aliases>
+      <alias>highlander</alias>
+    </aliases>
+  </breed>
+  <breed name="Himalayan, or Colorpoint Persian" code="himalayan, or colorpoint persian" xmlns="">
+    <aliases>
+      <alias>himalayan, or colorpoint persian</alias>
+      <alias>himalayan,-or-colorpoint-persian</alias>
+      <alias>himalayan,_or_colorpoint_persian</alias>
+      <alias>gimalayskaya</alias>
+      <alias>the-himalayan-cat</alias>
+      <alias>gimalajskaya-koshka-persidskij-kolor-pojnt</alias>
+      <alias>gimalajskaja_koshka_karnaval_fantazij</alias>
+      <alias>gimalayskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Japanese Bobtail" code="japanese bobtail" xmlns="">
+    <aliases>
+      <alias>japanese bobtail</alias>
+      <alias>japanese-bobtail</alias>
+      <alias>japanese_bobtail</alias>
+      <alias>japonskij_bobtejl</alias>
+      <alias>yaponskiybobteyl</alias>
+      <alias>japonskij_bobtejl_pomashi_mne_lapkoj_koshka</alias>
+      <alias>japonskij_bobtejl_vneshnost_kharakter_i_istorija_porody</alias>
+      <alias>japan-bobtail</alias>
+    </aliases>
+  </breed>
+  <breed name="Javanese" code="javanese" xmlns="">
+    <aliases>
+      <alias>javanese</alias>
+      <alias>yavanskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Kurilian Bobtail" code="kurilian bobtail" xmlns="">
+    <aliases>
+      <alias>kurilian bobtail</alias>
+      <alias>kurilian-bobtail</alias>
+      <alias>kurilian_bobtail</alias>
+      <alias>kurilskij-bobtejl</alias>
+      <alias>kurilskiybobteyl</alias>
+      <alias>kurilian bobtail, or kuril islands bobtail</alias>
+      <alias>kurilskij_bobtejl_khvost_krjuchkom_ushki_torchkom</alias>
+      <alias>kurilskiy-bobtail</alias>
+    </aliases>
+  </breed>
+  <breed name="Khao Manee" code="khao manee" xmlns="">
+    <aliases>
+      <alias>khao manee</alias>
+      <alias>khao-manee</alias>
+      <alias>khao_manee</alias>
+      <alias>kao-mani</alias>
+      <alias>kao_mani</alias>
+    </aliases>
+  </breed>
+  <breed name="Korat" code="korat" xmlns="">
+    <aliases>
+      <alias>korat</alias>
+      <alias>korat_koshka_prinosjashhaja_schaste</alias>
+    </aliases>
+  </breed>
+  <breed name="Korean Bobtail" code="korean bobtail" xmlns="">
+    <aliases>
+      <alias>korean bobtail</alias>
+      <alias>korean-bobtail</alias>
+      <alias>korean_bobtail</alias>
+      <alias>karelskij_bobtejl_istorija_kharakter_i_otlichija</alias>
+    </aliases>
+  </breed>
+  <breed name="Korn Ja" code="korn ja" xmlns="">
+    <aliases>
+      <alias>korn ja</alias>
+      <alias>korn-ja</alias>
+      <alias>korn_ja</alias>
+    </aliases>
+  </breed>
+  <breed name="LaPerm" code="laperm" xmlns="">
+    <aliases>
+      <alias>laperm</alias>
+      <alias>laperm-dallasskij-laperm-amerikanskij-reks-indejskij-reks-alpaka</alias>
+      <alias>la_perm</alias>
+      <alias>la_perm_kudrjavyj_sjurpriz</alias>
+    </aliases>
+  </breed>
+  <breed name="Lykoi" code="lykoi" xmlns="">
+    <aliases>
+      <alias>lykoi</alias>
+      <alias>likoi</alias>
+      <alias>likoi-koshka-oboroten</alias>
+      <alias>likoj_kot_oboroten_v_koshachej_shkure_istorija_porody_opisanie_i_kharakter</alias>
+    </aliases>
+  </breed>
+  <breed name="Maine Coon" code="maine coon" xmlns="">
+    <aliases>
+      <alias>maine coon</alias>
+      <alias>maine-coon</alias>
+      <alias>maine_coon</alias>
+      <alias>mainecoon</alias>
+      <alias>meyn-kun</alias>
+      <alias>mejn-kun</alias>
+      <alias>mejn_kun_gigant_iz_shtata_mehn</alias>
+    </aliases>
+  </breed>
+  <breed name="Manx" code="manx" xmlns="">
+    <aliases>
+      <alias>manx</alias>
+      <alias>manks</alias>
+      <alias>menskaya-koshka-menks,-manks</alias>
+      <alias>mehnks_mehnskaja_beskhvostaja_koshka</alias>
+      <alias>menks</alias>
+    </aliases>
+  </breed>
+  <breed name="Mekong Bobtail" code="mekong bobtail" xmlns="">
+    <aliases>
+      <alias>mekong bobtail</alias>
+      <alias>mekong-bobtail</alias>
+      <alias>mekong_bobtail</alias>
+      <alias>mekongskij-bobtejl</alias>
+      <alias>mekongskij-tajskij-bobtejl</alias>
+      <alias>mekongskij_bobtejl_khvost_krjuchkom_o_grazhdanstve_molchkom</alias>
+      <alias>mekongskiy-bobteyl</alias>
+    </aliases>
+  </breed>
+  <breed name="Minskin" code="minskin" xmlns="">
+    <aliases>
+      <alias>minskin</alias>
+    </aliases>
+  </breed>
+  <breed name="Munchkin" code="munchkin" xmlns="">
+    <aliases>
+      <alias>munchkin</alias>
+      <alias>manchkin</alias>
+      <alias>manchkin_korotkie_lapki_uspekhu_ne_pomekha</alias>
+    </aliases>
+  </breed>
+  <breed name="Nebelung" code="nebelung" xmlns="">
+    <aliases>
+      <alias>nebelung</alias>
+      <alias>nibelung</alias>
+      <alias>nibelung_mjagkij_shelk_vnutri_i_snaruzhi</alias>
+    </aliases>
+  </breed>
+  <breed name="Napoleon" code="napoleon" xmlns="">
+    <aliases>
+      <alias>napoleon</alias>
+      <alias>napoleon-karlikovaya-koshka-korotkolapaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Norwegian Forest cat" code="norwegian forest cat" xmlns="">
+    <aliases>
+      <alias>norwegian forest cat</alias>
+      <alias>norwegian-forest-cat</alias>
+      <alias>norwegian_forest_cat</alias>
+      <alias>norvejskayalesnaya</alias>
+      <alias>norvezhskaya-lesnaya</alias>
+      <alias>norwegian_forest</alias>
+      <alias>norvezhskaya-lesnaya-koshka</alias>
+      <alias>norvezhskaja_lesnaja_koshka_mjagkimi_lapkami_po_pushistomu_snegu</alias>
+      <alias>norvezhskaja_lesnaja_koshka_vse_osobennosti_porody_foto_i_video</alias>
+    </aliases>
+  </breed>
+  <breed name="Ocicat" code="ocicat" xmlns="">
+    <aliases>
+      <alias>ocicat</alias>
+      <alias>ociket</alias>
+      <alias>ocziket-oczikat</alias>
+      <alias>ociket_maskirujas_pod_dikogo_zverja</alias>
+      <alias>otsiket</alias>
+    </aliases>
+  </breed>
+  <breed name="Oregon Rex" code="oregon rex" xmlns="">
+    <aliases>
+      <alias>oregon rex</alias>
+      <alias>oregon-rex</alias>
+      <alias>oregon_rex</alias>
+      <alias>oregon-reks</alias>
+    </aliases>
+  </breed>
+  <breed name="Oriental Bicolor" code="oriental bicolor" xmlns="">
+    <aliases>
+      <alias>oriental bicolor</alias>
+      <alias>oriental-bicolor</alias>
+      <alias>oriental_bicolor</alias>
+    </aliases>
+  </breed>
+  <breed name="Oriental Shorthair" code="oriental shorthair" xmlns="">
+    <aliases>
+      <alias>oriental shorthair</alias>
+      <alias>oriental-shorthair</alias>
+      <alias>oriental_shorthair</alias>
+      <alias>foreign_white</alias>
+      <alias>foreign-white</alias>
+      <alias>oriental</alias>
+      <alias>orientalnaja-koshka</alias>
+      <alias>oriental-shorthair-cat</alias>
+      <alias>vostochnayakorotkosherstnaya</alias>
+      <alias>forin-vajt-foreign-white</alias>
+      <alias>orientalnaya-vostochnaya-korotkosherstnaya</alias>
+      <alias>forin_vajt</alias>
+      <alias>orientalnye_koshki_sryvaja_maski</alias>
+      <alias>orientalnaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Oriental Longhair" code="oriental longhair" xmlns="">
+    <aliases>
+      <alias>oriental longhair</alias>
+      <alias>oriental-longhair</alias>
+      <alias>oriental_longhair</alias>
+      <alias>oriental-longhair-cat</alias>
+      <alias>javanez_dlinnosherstnaja_orientalnaja_koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="PerFold Cat (Experimental Breed - WCF)" code="perfold cat (experimental breed - wcf)" xmlns="">
+    <aliases>
+      <alias>perfold cat (experimental breed   wcf)</alias>
+      <alias>perfold-cat-(experimental-breed---wcf)</alias>
+      <alias>perfold_cat_(experimental_breed___wcf)</alias>
+      <alias>perfold cat (experimental breed - wcf)</alias>
+    </aliases>
+  </breed>
+  <breed name="Persian (Modern Persian Cat)" code="persian (modern persian cat)" xmlns="">
+    <aliases>
+      <alias>persian (modern persian cat)</alias>
+      <alias>persian-(modern-persian-cat)</alias>
+      <alias>persian_(modern_persian_cat)</alias>
+    </aliases>
+  </breed>
+  <breed name="Persian (Traditional Persian Cat)" code="persian (traditional persian cat)" xmlns="">
+    <aliases>
+      <alias>persian (traditional persian cat)</alias>
+      <alias>persian-(traditional-persian-cat)</alias>
+      <alias>persian_(traditional_persian_cat)</alias>
+      <alias>persian</alias>
+      <alias>persian-cat</alias>
+      <alias>persidskaya</alias>
+      <alias>persidskaya-koshka</alias>
+      <alias>shinshilla-persidskaya</alias>
+      <alias>persidskie_koshki_prikosnovenie_sherstjanoj_dushi</alias>
+      <alias>persidskie-koshki</alias>
+    </aliases>
+  </breed>
+  <breed name="Peterbald" code="peterbald" xmlns="">
+    <aliases>
+      <alias>peterbald</alias>
+      <alias>peterbold</alias>
+      <alias>peterbold-peterburgskij-sfinks</alias>
+      <alias>peterburgskij_sfinks_obnazhennaja_natura_v_otechestvennoj_felinologii</alias>
+    </aliases>
+  </breed>
+  <breed name="Pixie-bob" code="pixie-bob" xmlns="">
+    <aliases>
+      <alias>pixie bob</alias>
+      <alias>pixie-bob</alias>
+      <alias>pixie_bob</alias>
+      <alias>piksibob</alias>
+      <alias>pixiebob</alias>
+      <alias>piksibob-piksi-bob</alias>
+      <alias>piksibob_vneshnost_osobennosti_i_istorija_porody</alias>
+    </aliases>
+  </breed>
+  <breed name="Raas" code="raas" xmlns="">
+    <aliases>
+      <alias>raas</alias>
+    </aliases>
+  </breed>
+  <breed name="Ragamuffin" code="ragamuffin" xmlns="">
+    <aliases>
+      <alias>ragamuffin</alias>
+      <alias>ragamaffin</alias>
+      <alias>ragamaffin_podrobnyj_obzor_porody</alias>
+    </aliases>
+  </breed>
+  <breed name="Ragdoll" code="ragdoll" xmlns="">
+    <aliases>
+      <alias>ragdoll</alias>
+      <alias>regdoll</alias>
+      <alias>rehgdoll_spokojstvie_i_tolko_spokojstvie</alias>
+    </aliases>
+  </breed>
+  <breed name="Russian Blue" code="russian blue" xmlns="">
+    <aliases>
+      <alias>russian blue</alias>
+      <alias>russian-blue</alias>
+      <alias>russian_blue</alias>
+      <alias>russian-blue-cat</alias>
+      <alias>russkayagolubaya</alias>
+      <alias>russkaya-golubaya-koshka</alias>
+      <alias>russkaja_golubaja_koshka_zhemchuzhina_belogo_morja</alias>
+    </aliases>
+  </breed>
+  <breed name="Russian White, Black and Tabby" code="russian white, black and tabby" xmlns="">
+    <aliases>
+      <alias>russian white, black and tabby</alias>
+      <alias>russian-white,-black-and-tabby</alias>
+      <alias>russian_white,_black_and_tabby</alias>
+    </aliases>
+  </breed>
+  <breed name="Sam Sawet" code="sam sawet" xmlns="">
+    <aliases>
+      <alias>sam sawet</alias>
+      <alias>sam-sawet</alias>
+      <alias>sam_sawet</alias>
+    </aliases>
+  </breed>
+  <breed name="Savannah" code="savannah" xmlns="">
+    <aliases>
+      <alias>savannah</alias>
+      <alias>koshka-ashera</alias>
+      <alias>koshka-savanna</alias>
+      <alias>ashera</alias>
+      <alias>savanna</alias>
+      <alias>ashera_koshka_ili_mif</alias>
+      <alias>savanna_koshka_ruchnoj_khishhnik_s_beregov_kongo</alias>
+    </aliases>
+  </breed>
+  <breed name="Scottish Fold" code="scottish fold" xmlns="">
+    <aliases>
+      <alias>scottish fold</alias>
+      <alias>scottish-fold</alias>
+      <alias>scottish_fold</alias>
+      <alias>highland-fold-scottish-vislouha-long-haired-cat</alias>
+      <alias>scottish_fold_lh</alias>
+      <alias>scottish_fold_sh</alias>
+      <alias>skottish</alias>
+      <alias>skottish-fold</alias>
+      <alias>shotlandskaya-vislouxaya-koshka-skottish-fold</alias>
+      <alias>shotlandskaja_visloukhaja_koshka_ocharovatelnyj_druzhochek_na_ljuboj_vkus_i_cvet</alias>
+    </aliases>
+  </breed>
+  <breed name="Selkirk Rex" code="selkirk rex" xmlns="">
+    <aliases>
+      <alias>selkirk rex</alias>
+      <alias>selkirk-rex</alias>
+      <alias>selkirk_rex</alias>
+      <alias>selkirk-reks</alias>
+      <alias>selkirk_reks</alias>
+    </aliases>
+  </breed>
+  <breed name="Serengeti" code="serengeti" xmlns="">
+    <aliases>
+      <alias>serengeti</alias>
+    </aliases>
+  </breed>
+  <breed name="Serrade petit" code="serrade petit" xmlns="">
+    <aliases>
+      <alias>serrade petit</alias>
+      <alias>serrade-petit</alias>
+      <alias>serrade_petit</alias>
+    </aliases>
+  </breed>
+  <breed name="Siamese" code="siamese" xmlns="">
+    <aliases>
+      <alias>siamese</alias>
+      <alias>siamese-cat</alias>
+      <alias>siamskayakoshka</alias>
+      <alias>siamskaya-koshka</alias>
+      <alias>siamskie_koshki_iz_monastyrja_na_podium</alias>
+    </aliases>
+  </breed>
+  <breed name="Siberian" code="siberian" xmlns="">
+    <aliases>
+      <alias>siberian</alias>
+      <alias>siberian-cats</alias>
+      <alias>sibirskayakoshka</alias>
+      <alias>sibirskaya-koshka</alias>
+      <alias>sibirskaja_koshka_pryzhok_iz_tajgi_na_podokonnik</alias>
+      <alias>sibirskie-koshki</alias>
+    </aliases>
+  </breed>
+  <breed name="Singapura" code="singapura" xmlns="">
+    <aliases>
+      <alias>singapura</alias>
+      <alias>singapora</alias>
+      <alias>singapurskayakoshka</alias>
+      <alias>singapurskaya-koshka</alias>
+      <alias>singapurskaja_koshka_usatyj_minimalizm</alias>
+    </aliases>
+  </breed>
+  <breed name="Snowshoe" code="snowshoe" xmlns="">
+    <aliases>
+      <alias>snowshoe</alias>
+      <alias>snou-shu</alias>
+      <alias>cnou_shu</alias>
+      <alias>snou_shu_princessa_v_snezhnykh_tufelkakh</alias>
+    </aliases>
+  </breed>
+  <breed name="Somali" code="somali" xmlns="">
+    <aliases>
+      <alias>somali</alias>
+      <alias>somaliiskaya-koshka</alias>
+      <alias>somaliyskayakoshka</alias>
+      <alias>somalijskaya-koshka-somali</alias>
+      <alias>somalijskaja_koshka_pushistoe_solnyshko</alias>
+    </aliases>
+  </breed>
+  <breed name="Sphynx" code="sphynx" xmlns="">
+    <aliases>
+      <alias>sphynx</alias>
+      <alias>golayakoshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Suphalak" code="suphalak" xmlns="">
+    <aliases>
+      <alias>suphalak</alias>
+    </aliases>
+  </breed>
+  <breed name="Thai" code="thai" xmlns="">
+    <aliases>
+      <alias>thai</alias>
+      <alias>tajskaya-koshka</alias>
+      <alias>tayskayakoshka</alias>
+      <alias>thai-cat</alias>
+      <alias>tajskaja_koshka_gostja_iz_proshlogo</alias>
+    </aliases>
+  </breed>
+  <breed name="Thai Lilac" code="thai lilac" xmlns="">
+    <aliases>
+      <alias>thai lilac</alias>
+      <alias>thai-lilac</alias>
+      <alias>thai_lilac</alias>
+    </aliases>
+  </breed>
+  <breed name="Tonkinese" code="tonkinese" xmlns="">
+    <aliases>
+      <alias>tonkinese</alias>
+      <alias>tonkin-cat</alias>
+      <alias>tonkinez</alias>
+      <alias>tonkinskaya-koshka</alias>
+      <alias>tonkinskaja_koshka_podrobnoe_opisanie_porody_foto_i_video</alias>
+    </aliases>
+  </breed>
+  <breed name="Toyger" code="toyger" xmlns="">
+    <aliases>
+      <alias>toyger</alias>
+      <alias>tojger</alias>
+    </aliases>
+  </breed>
+  <breed name="Turkish Angora" code="turkish angora" xmlns="">
+    <aliases>
+      <alias>turkish angora</alias>
+      <alias>turkish-angora</alias>
+      <alias>turkish_angora</alias>
+      <alias>angorskayakoshka</alias>
+      <alias>tureckayaangora</alias>
+      <alias>tureckaya-angora</alias>
+      <alias>tureczkaya-angorskaya-koshka</alias>
+      <alias>tureckaja_angora_snezhnaja_koroleva_s_nezhnym_kharakterom</alias>
+      <alias>turetskaya-angora</alias>
+    </aliases>
+  </breed>
+  <breed name="Turkish Van" code="turkish van" xmlns="">
+    <aliases>
+      <alias>turkish van</alias>
+      <alias>turkish-van</alias>
+      <alias>turkish_van</alias>
+      <alias>tureckij-van</alias>
+      <alias>turkish-van-turkish-vanska-cat</alias>
+      <alias>van</alias>
+      <alias>tureckij_van_poceluj_solnca</alias>
+      <alias>turetskiy-van</alias>
+    </aliases>
+  </breed>
+  <breed name="Ukrainian Levkoy" code="ukrainian levkoy" xmlns="">
+    <aliases>
+      <alias>ukrainian levkoy</alias>
+      <alias>ukrainian-levkoy</alias>
+      <alias>ukrainian_levkoy</alias>
+      <alias>ukrainskij-levkoy</alias>
+      <alias>ukrainskij-levkoj</alias>
+      <alias>ukrainskij_levkoj_dizajnerskoe_chudo_rodom_iz_kieva</alias>
+      <alias>ukrainskiy-levkoy</alias>
+    </aliases>
+  </breed>
+  <breed name="Urals Rex" code="urals rex" xmlns="">
+    <aliases>
+      <alias>urals rex</alias>
+      <alias>urals-rex</alias>
+      <alias>ural_rex</alias>
+      <alias>uralskij-reks</alias>
+      <alias>uralskiy-reks</alias>
+      <alias>uralskij_reks_volnujushhee_ocharovanie</alias>
+    </aliases>
+  </breed>
+  <breed name="American Ringtail" code="american ringtail" xmlns="">
+    <aliases>
+      <alias>american ringtail</alias>
+      <alias>american_ringtail</alias>
+      <alias>kolczexvostaya-koshka-amerikanskij-ringtejl-amerikanskaya-kolczexvostaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Anatoli" code="anatoli" xmlns="">
+    <aliases>
+      <alias>anatoli</alias>
+      <alias>anatolian_cat_turkish_shorthair</alias>
+      <alias>anatolijskaya-koshka-tureczkaya-korotkosherstnaya</alias>
+      <alias>anatolijskaja_koshka_tureckaja_korotkosherstnaja</alias>
+      <alias>anatoliyskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Asian Longhair" code="asian longhair" xmlns="">
+    <aliases>
+      <alias>asian longhair</alias>
+      <alias>asian_longhair</alias>
+    </aliases>
+  </breed>
+  <breed name="Asian Shorthair" code="asian shorthair" xmlns="">
+    <aliases>
+      <alias>asian shorthair</alias>
+      <alias>asian_shorthair</alias>
+      <alias>asian_tabby</alias>
+      <alias>aziatskayatabbi</alias>
+      <alias>aziatskaya-tabbi</alias>
+    </aliases>
+  </breed>
+  <breed name="Asian Smoke" code="asian smoke" xmlns="">
+    <aliases>
+      <alias>asian smoke</alias>
+      <alias>asian_smoke</alias>
+      <alias>australian_smoked_cat_australian_mist</alias>
+      <alias>aziatskayadymchataya</alias>
+      <alias>aziatskaya-dyimchataya-koshka-burmuar</alias>
+    </aliases>
+  </breed>
+  <breed name="Australian Tiffanie" code="australian tiffanie" xmlns="">
+    <aliases>
+      <alias>australian tiffanie</alias>
+      <alias>australian_tiffanie</alias>
+    </aliases>
+  </breed>
+  <breed name="Bohemia Rex" code="bohemia rex" xmlns="">
+    <aliases>
+      <alias>bohemia rex</alias>
+      <alias>bohemia_rex</alias>
+    </aliases>
+  </breed>
+  <breed name="Bristol" code="bristol" xmlns="">
+    <aliases>
+      <alias>bristol</alias>
+    </aliases>
+  </breed>
+  <breed name="Canadian Sphynx" code="canadian sphynx" xmlns="">
+    <aliases>
+      <alias>canadian sphynx</alias>
+      <alias>canadian-sphynx</alias>
+      <alias>kanadskij-sfinks</alias>
+      <alias>kanadskiysfinks</alias>
+      <alias>kanadskij_sfinks</alias>
+      <alias>kanadskij_sfinks_neprikrytoe_ocharovanie</alias>
+      <alias>kanadskiy-sfinks</alias>
+    </aliases>
+  </breed>
+  <breed name="Ceylon" code="ceylon" xmlns="">
+    <aliases>
+      <alias>ceylon</alias>
+      <alias>ceylon-cat</alias>
+      <alias>ceylonskayakoshka</alias>
+      <alias>czejlonskaya-koshka</alias>
+      <alias>cejlonskaja_koshka</alias>
+      <alias>tseylonskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Dragon Li" code="dragon li" xmlns="">
+    <aliases>
+      <alias>dragon li</alias>
+      <alias>chinese_li_hua</alias>
+      <alias>chinese-li-hua</alias>
+      <alias>kitajskaya-li-xua-li-mao-li-xua-mao-drakon-li</alias>
+      <alias>kitajskaja_koshka_li_khua_kradushhijsja_tigr_zataivshijsja_drakon</alias>
+    </aliases>
+  </breed>
+  <breed name="Domestic Cat" code="domestic cat" xmlns="">
+    <aliases>
+      <alias>domestic cat</alias>
+      <alias>domestic_cat</alias>
+    </aliases>
+  </breed>
+  <breed name="Kanaani" code="kanaani" xmlns="">
+    <aliases>
+      <alias>kanaani</alias>
+      <alias>kanaani-xanaani</alias>
+    </aliases>
+  </breed>
+  <breed name="Karelian Bobtail" code="karelian bobtail" xmlns="">
+    <aliases>
+      <alias>karelian bobtail</alias>
+      <alias>karelian_bobtail</alias>
+      <alias>karelian-bobtail</alias>
+    </aliases>
+  </breed>
+  <breed name="Mandalay" code="mandalay" xmlns="">
+    <aliases>
+      <alias>mandalay</alias>
+      <alias>mandalaj</alias>
+    </aliases>
+  </breed>
+  <breed name="Neva Masquerade" code="neva masquerade" xmlns="">
+    <aliases>
+      <alias>neva masquerade</alias>
+      <alias>neva_masquerade</alias>
+      <alias>neva-masquerade-cat</alias>
+      <alias>nevskayamaskaradnaya</alias>
+      <alias>nevskaya-maskaradnaya</alias>
+      <alias>nevskaja_maskaradnaja_poroda_koshek_brilliant_otechestvennoj_felinologii</alias>
+    </aliases>
+  </breed>
+  <breed name="Poodle Cat" code="poodle cat" xmlns="">
+    <aliases>
+      <alias>poodle cat</alias>
+      <alias>poodle_cat</alias>
+    </aliases>
+  </breed>
+  <breed name="Scottish Straight" code="scottish straight" xmlns="">
+    <aliases>
+      <alias>scottish straight</alias>
+      <alias>scottish_straight</alias>
+      <alias>scottish-straight</alias>
+      <alias>shotlandskaya-pryamouxaya-koshka-skottish-strajt</alias>
+    </aliases>
+  </breed>
+  <breed name="Chinchilla" code="chinchilla" xmlns="">
+    <aliases>
+      <alias>chinchilla</alias>
+      <alias>shinshilla</alias>
+    </aliases>
+  </breed>
+  <breed name="Toy Bobtail" code="toy bobtail" xmlns="">
+    <aliases>
+      <alias>toy bobtail</alias>
+      <alias>toy-bobtail</alias>
+      <alias>toj-bobtejl</alias>
+      <alias>skif_taj_don_podrobnoe_opisanie_porody_foto_i_video</alias>
+    </aliases>
+  </breed>
+  <breed name="Ussuri" code="ussuri" xmlns="">
+    <aliases>
+      <alias>ussuri</alias>
+      <alias>ussurijskaja_koshka_polosatyj_ehkskljuziv</alias>
+    </aliases>
+  </breed>
+  <breed name="York" code="york" xmlns="">
+    <aliases>
+      <alias>york</alias>
+      <alias>york_chocolate</alias>
+      <alias>york-chocolate-cat</alias>
+      <alias>yorkskayashokoladnaya</alias>
+      <alias>jorkskaya-shokoladnaya-koshka</alias>
+      <alias>jorkskaja_shokoladnaja_koshka_ehstetika_vkusa</alias>
+    </aliases>
+  </breed>
+  <breed name="Chausie" code="chausie" xmlns="">
+    <aliases>
+      <alias>chausie</alias>
+      <alias>chauzi-xausi-shauzi</alias>
+      <alias>chauzi</alias>
+    </aliases>
+  </breed>
+  <breed name="Black Footed" code="black footed" xmlns="">
+    <aliases>
+      <alias>black footed</alias>
+      <alias>chernonogaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Caracal Domestic" code="karakal domestic" xmlns="">
+    <aliases>
+      <alias>karakal domestic</alias>
+      <alias>domashnij-karakal</alias>
+    </aliases>
+  </breed>
+  <breed name="Elf" code="elf" xmlns="">
+    <aliases>
+      <alias>elf</alias>
+      <alias>koshka_ehlf_bolshoj_obzor_porody_foto_i_video</alias>
+    </aliases>
+  </breed>
+  <breed name="Eurasian Lynx" code="eurasian lynx" xmlns="">
+    <aliases>
+      <alias>eurasian lynx</alias>
+      <alias>evroaziatskaya-ryis-obyiknovennaya-ryis</alias>
+    </aliases>
+  </breed>
+  <breed name="European Wildcat" code="european wildcat" xmlns="">
+    <aliases>
+      <alias>european wildcat</alias>
+      <alias>evropejskaya-dikaya-lesnaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Asiatic Wildcat" code="asiatic wildcat" xmlns="">
+    <aliases>
+      <alias>asiatic wildcat</alias>
+      <alias>indijskij-stepnoj-kot-aziatskie-dikie-koshki</alias>
+    </aliases>
+  </breed>
+  <breed name="Jungle Cat" code="jungle cat" xmlns="">
+    <aliases>
+      <alias>jungle cat</alias>
+      <alias>kamyishovyij-kot</alias>
+      <alias>kamyshovyj_kot_priroda_ili_poroda</alias>
+    </aliases>
+  </breed>
+  <breed name="Caracal" code="caracal" xmlns="">
+    <aliases>
+      <alias>caracal</alias>
+      <alias>karakal-stepnaya-ryis-pustyinnaya-ryis</alias>
+      <alias>karakal_pokorjaja_prirodu</alias>
+    </aliases>
+  </breed>
+  <breed name="Chinese Mountain" code="chinese mountain" xmlns="">
+    <aliases>
+      <alias>chinese mountain</alias>
+      <alias>kitajskaya-seraya-koshka-kitajskaya-gornaya-gobijskaya-seraya</alias>
+    </aliases>
+  </breed>
+  <breed name="Kodkod" code="kodkod" xmlns="">
+    <aliases>
+      <alias>kodkod</alias>
+      <alias>kodkod-chilijskaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="African Wildcat" code="african wildcat" xmlns="">
+    <aliases>
+      <alias>african wildcat</alias>
+      <alias>livijskaya-bulanaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Pallas or Manul" code="pallas or manul" xmlns="">
+    <aliases>
+      <alias>pallas or manul</alias>
+      <alias>manul-dikij-stepnoj-kot</alias>
+    </aliases>
+  </breed>
+  <breed name="Ocelot" code="ocelot" xmlns="">
+    <aliases>
+      <alias>ocelot</alias>
+      <alias>oczelot</alias>
+    </aliases>
+  </breed>
+  <breed name="Ojos Azules" code="ojos azules" xmlns="">
+    <aliases>
+      <alias>ojos azules</alias>
+      <alias>oxos-azules-goluboglazka-goluboglazaya-koshka</alias>
+      <alias>ojos_azules</alias>
+      <alias>ojos-azules</alias>
+      <alias>okhos_azules</alias>
+    </aliases>
+  </breed>
+  <breed name="Sand Cat" code="sand cat" xmlns="">
+    <aliases>
+      <alias>sand cat</alias>
+      <alias>pustyinnaya-koshka</alias>
+    </aliases>
+  </breed>
+  <breed name="Seychellois" code="seychellois" xmlns="">
+    <aliases>
+      <alias>seychellois</alias>
+      <alias>sejshelskaya-korotkosherstnaya-koshka-sejshelyi</alias>
+      <alias>sejshelskaja_koshka_istorija_kharakter_i_vneshnij_vid</alias>
+    </aliases>
+  </breed>
+  <breed name="Sokoke" code="sokoke" xmlns="">
+    <aliases>
+      <alias>sokoke</alias>
+      <alias>sokoke-soukok,-kenijskaya-lesnaya-koshka</alias>
+      <alias>sokoke_gostja_iz_dalekoj_afriki</alias>
+    </aliases>
+  </breed>
+  <breed name="Oncilla" code="oncilla" xmlns="">
+    <aliases>
+      <alias>oncilla</alias>
+      <alias>tigrovaya-koshka-onczilla</alias>
+    </aliases>
+  </breed>
+  <breed name="Highland Fold" code="highland fold" xmlns="">
+    <aliases>
+      <alias>highland fold</alias>
+      <alias>xajlend-fold</alias>
+      <alias>haylend-fold</alias>
+    </aliases>
+  </breed>
+  <breed name="Highland Straight" code="highland straight" xmlns="">
+    <aliases>
+      <alias>highland straight</alias>
+      <alias>xajlend-strajt</alias>
+    </aliases>
+  </breed>
+  <breed name="Flappig" code="flappig" xmlns="">
+    <aliases>
+      <alias>flappig</alias>
+      <alias>flehppig</alias>
+    </aliases>
+  </breed>
+  <breed name="Serval" code="serval" xmlns="">
+    <aliases>
+      <alias>serval</alias>
+    </aliases>
+  </breed>
+</breeds>
