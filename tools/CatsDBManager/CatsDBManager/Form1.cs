@@ -1348,5 +1348,34 @@ namespace CatsDBManager
         {
             UpdateImages();
         }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            if (radioButtonFolder.Checked) {
+                var dialog = new FolderBrowserDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    //var breeds = getBreeds();
+                    //var sources = getRawSources();
+                    //var aliases = GetBreedAliasesByName(comboBoxBreed.SelectedItem.ToString());
+
+                    //foreach (string alias in aliases)
+                    //{
+                    //    foreach (string src in sources)
+                    //    {
+                    //        if (src == comboBoxSrc.SelectedItem.ToString() || comboBoxSrc.SelectedIndex == 0)
+                    //        {
+                    //            var path = Path.Combine(src, "breeds", alias);
+                    //            if (Directory.Exists(path))
+                    //            {
+                    //                var files = Directory.GetFiles(path);
+                    //                result.AddRange(files);
+                    //            }
+                    //        }
+                    //    }
+                    //}
+                }
+            }
+        }
     }
 }
