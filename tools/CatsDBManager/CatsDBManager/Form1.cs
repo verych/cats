@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using EyeOpen.Imaging;
+using Newtonsoft.Json;
 
 namespace CatsDBManager
 {
@@ -37,16 +38,78 @@ namespace CatsDBManager
         private string ImagesApprovedPath;
         private string ImagesDeclinedPath;
         private Dictionary<string, List<string>> Duplicates = new Dictionary<string, List<string>>();
+        private List<string> rawSources = new List<string>();
+
+        private SortedDictionary<string, DataItem> data = new SortedDictionary<string, DataItem>();
+        private bool isAppLoaded = false;
+
+        private string selectedName;
+        private Point newRegionStart = new Point();
+        private Point newRegionEnd = new Point();
+        private Point newRegionCurrent = new Point();
+        private bool isDrawingRegion = false;
 
         public Form1()
         {
             InitializeComponent();
             InitBreeds();
-            buttonLoadBreeds_Click(null, null);
-            InitUnlinkedBreeds();
-            InitApproveLists();
+            //buttonLoadBreeds_Click(null, null);
+            //InitUnlinkedBreeds();
+            //InitApproveLists();
+            InitDataItems();
             InitImages();
-            InitDuplicates();
+            LoadData();
+            //InitDuplicates();
+            isAppLoaded = true;
+        }
+
+        private int GetTargetSize()
+        {
+            int defaultSize = 128;
+            if (int.TryParse(textBoxTargetSize.Text, out defaultSize))
+            {
+                return defaultSize;
+            }
+            return defaultSize;
+        }
+
+        private int GetRotationStep()
+        {
+            int result = 15;
+            if (int.TryParse(textBoxRotationStep.Text, out result))
+            {
+                return result;
+            }
+            return result;
+        }
+
+        private void InitDataItems()
+        {
+            data = new SortedDictionary<string, DataItem>();
+            var breeds = getBreeds();
+            var sources = getRawSources();
+
+            foreach (string breed in breeds)
+            {
+                var result = new List<string>();
+                var aliases = GetBreedAliasesByName(breed);
+                foreach (string alias in aliases)
+                {
+                    foreach (string src in sources)
+                    {
+                        var path = Path.Combine(src, "breeds", alias);
+                        if (Directory.Exists(path))
+                        {
+                            var files = Directory.GetFiles(path).ToList<string>();
+                            foreach (var file in files)
+                            {
+                                var dataItem = new DataItem(file, breed, src);
+                                data.Add(dataItem.name, dataItem);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void InitDuplicates()
@@ -81,12 +144,13 @@ namespace CatsDBManager
         {
             var breeds = getBreeds();
             breeds.Sort();
+            breeds.Insert(0, "---Not selected---");
             comboBoxBreed.DataSource = breeds;
-            var srcs = getRawSources();
-            srcs.Sort();
-            srcs.Insert(0, "---All---");
-            comboBoxSrc.DataSource = srcs;
-            UpdateImages();
+            rawSources = getRawSources();
+            rawSources.Sort();
+            rawSources.Insert(0, "---All---");
+            comboBoxSrc.DataSource = rawSources;
+            //UpdateImages();
         }
 
         private void UpdateImages()
@@ -200,6 +264,7 @@ namespace CatsDBManager
         private List<string> GetBreedAliasesByName(string breed)
         {
             XmlNodeList aliasesList = breeds.SelectNodes(String.Format("//breed[@name='{0}']/aliases/alias", breed));
+           
             List<string> result = new List<string>();
             foreach (XmlElement nn in aliasesList)
             {
@@ -985,12 +1050,18 @@ namespace CatsDBManager
 
         private void comboBoxBreed_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateImages();
+            if (isAppLoaded)
+            {
+                UpdateImages();
+            }
         }
 
         private void comboBoxSrc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateImages();
+            if (isAppLoaded)
+            {
+                UpdateImages();
+            }
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
@@ -1351,31 +1422,271 @@ namespace CatsDBManager
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            if (radioButtonFolder.Checked) {
-                var dialog = new FolderBrowserDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    //var breeds = getBreeds();
-                    //var sources = getRawSources();
-                    //var aliases = GetBreedAliasesByName(comboBoxBreed.SelectedItem.ToString());
+            var dialog = new FolderBrowserDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                var breeds = getBreeds();
+                var sources = getRawSources();
 
-                    //foreach (string alias in aliases)
-                    //{
-                    //    foreach (string src in sources)
-                    //    {
-                    //        if (src == comboBoxSrc.SelectedItem.ToString() || comboBoxSrc.SelectedIndex == 0)
-                    //        {
-                    //            var path = Path.Combine(src, "breeds", alias);
-                    //            if (Directory.Exists(path))
-                    //            {
-                    //                var files = Directory.GetFiles(path);
-                    //                result.AddRange(files);
-                    //            }
-                    //        }
-                    //    }
-                    //}
+                foreach (string breed in breeds)
+                {
+                    var result = new List<string>();
+                    var aliases = GetBreedAliasesByName(breed);
+                    foreach (string alias in aliases)
+                    {
+                        foreach (string src in sources)
+                        {
+                            var path = Path.Combine(src, "breeds", alias);
+                            if (Directory.Exists(path))
+                            {
+                                var files = Directory.GetFiles(path).ToList<string>();
+                                var validatedFiles = new List<string>();
+                                foreach (var file in files)
+                                {
+                                    var name = Path.GetFileName(file);
+                                    if (!ImagesDeclined.Contains(name)) {
+                                        validatedFiles.Add(file);
+                                    }
+                                }
+                                result.AddRange(validatedFiles);
+                            }
+                        }
+                    }
+                    ExportBreedFiles(dialog.SelectedPath, breed, result);
                 }
             }
+        }
+
+        private void ExportBreedFiles(string selectedPath, string breed, List<string> results)
+        {
+            if (results.Count < 20)
+            {
+                log("skipped {0}, {1}", breed, results.Count);
+                return;
+            }
+
+            log("exporting {0}, {1}", breed, results.Count);
+            try
+            {
+                var newPath = Path.Combine(selectedPath, breed);
+                if (Directory.Exists(newPath))
+                {
+                    Directory.Delete(newPath, true);
+                }
+                if (!Directory.Exists(newPath))
+                {
+                    Directory.CreateDirectory(newPath);
+                }
+                foreach (var file in results)
+                {
+                    var name = Path.GetFileName(file);
+                    var newFileName = Path.Combine(newPath, name);
+                    File.Copy(file, newFileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                log(ex.Message);
+            }
+        }
+
+        private void checkBoxRegions_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxRegions.Checked)
+            {
+                //listViewImages.View = View.Tile;
+                trackBarSize.Value = trackBarSize.Minimum;
+                splitContainerImages.SplitterDistance = splitContainerImages.Size.Width / 3;
+            }
+            else
+            {
+                //listViewImages.View = View.LargeIcon;
+                trackBarSize.Value = trackBarSize.Maximum;
+                splitContainerImages.SplitterDistance = splitContainerImages.Size.Width;
+            }
+            UpdateImages();
+        }
+
+        private void listViewImages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewImages.SelectedItems.Count > 0)
+            {
+                selectedName = listViewImages.SelectedItems[0].Text;
+            }
+
+            if (checkBoxRegions.Checked)
+            {
+                LoadRegionsImage();
+                LoadImagePreviews();
+            }
+        }
+
+        private void LoadImagePreviews()
+        {
+            if (listViewImages.SelectedItems.Count > 0)
+            {
+                listViewPreview.Items.Clear();
+                listViewPreview.View = View.LargeIcon;
+                var dataItem = GetDataItem(listViewImages.SelectedItems[0].Text);
+                var images = dataItem.GetOutputImages(GetTargetSize(), checkBoxCropMin.Checked, GetRotationStep());
+                listViewPreview.LargeImageList = images;
+                listViewPreview.LargeImageList = images;
+
+
+                int index = 0;
+                foreach (var item in listViewPreview.LargeImageList.Images)
+                {
+                    listViewPreview.Items.Add(index.ToString(), index++);
+                }
+            }
+        }
+
+        private void LoadRegionsImage(Rectangle? rect = null)
+        {
+            int size = GetTargetSize();
+            pictureBoxRegion.Width = size;
+            pictureBoxRegion.Height = size;
+
+
+            if (listViewImages.SelectedItems.Count > 0)
+            {
+                var dataItem = GetDataItem(listViewImages.SelectedItems[0].Text);
+                var image = dataItem.GetImageBitmap(size, checkBoxCropMin.Checked);
+                if (rect.HasValue)
+                {
+                    image = ImageHelper.AddRegion(image, rect.Value);
+                }
+                pictureBoxRegion.Image = image;
+
+                //regions
+                if (!rect.HasValue)
+                {
+                    log("---regions start---");
+                    foreach (var region in dataItem.regions)
+                    {
+                        log(region);
+                    }
+                    log("---regions end---");
+
+                    ShowRegionsList(dataItem);
+                }
+            }
+        }
+
+        private void ShowRegionsList(DataItem dataItem)
+        {
+            listViewRegions.Items.Clear();
+            listViewRegions.View = View.LargeIcon;
+            var images = dataItem.GetRegionImages(GetTargetSize(), checkBoxCropMin.Checked);
+            listViewRegions.LargeImageList = images;
+            listViewRegions.LargeImageList = images;
+
+
+            int index = 0;
+            foreach (var item in listViewRegions.LargeImageList.Images)
+            {
+                listViewRegions.Items.Add(index.ToString(), index++);
+            }
+        }
+
+        private DataItem GetDataItem(string name)
+        {
+            return data[name];
+        }
+
+        private DataItem GetSelectedDataItem()
+        {
+            return GetDataItem(selectedName);
+        }
+
+        private void checkBoxCropMin_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadRegionsImage();
+        }
+
+        private void pictureBoxRegion_MouseDown(object sender, MouseEventArgs e)
+        {
+            newRegionStart = new Point(e.X, e.Y);
+            isDrawingRegion = true;
+        }
+
+        private void pictureBoxRegion_MouseUp(object sender, MouseEventArgs e)
+        {
+            newRegionEnd = new Point(e.X, e.Y);
+            isDrawingRegion = false;
+            CreateRegion();
+        }
+
+        private void CreateRegion()
+        {
+            var item = GetSelectedDataItem();
+            var rect = item.AddRegion(GetImageRegionRectangle(newRegionStart, newRegionEnd));
+            SaveData();
+        }
+
+        private void SaveData()
+        {
+            log("Saving data...");
+            var output = JsonConvert.SerializeObject(data);
+            var file = Path.Combine(textBoxRootPath.Text, "data.json");
+            File.WriteAllText(file, output);
+            log("Saved");
+        }
+
+        private void LoadData()
+        {
+            log("Loading data...");
+            var file = Path.Combine(textBoxRootPath.Text, "data.json");
+            var json = File.ReadAllText(file);
+            var loaded = JsonConvert.DeserializeObject<SortedDictionary<string, DataItem>>(json);
+            log("Loaded, applying...");
+            //load regions
+            foreach (KeyValuePair<string, DataItem> item in loaded)
+            {
+                if (data.ContainsKey(item.Key))
+                {
+                    data[item.Key].regions = item.Value.regions;
+                }
+            }
+            log("Applied");
+        }
+
+        private void pictureBoxRegion_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDrawingRegion)
+            {
+                newRegionCurrent = new Point(e.X, e.Y);
+                PreviewRegion();
+            }
+        }
+
+        private void PreviewRegion()
+        {
+            Rectangle rect = GetImageRegionRectangle(newRegionStart, newRegionCurrent);
+            LoadRegionsImage(rect);
+        }
+
+        private Rectangle GetImageRegionRectangle(Point point1, Point point2)
+        {
+            var x1 = Math.Min(point1.X, point2.X);
+            var x2 = Math.Max(point1.X, point2.X);
+            var y1 = Math.Min(point1.Y, point2.Y);
+            var y2 = Math.Max(point1.Y, point2.Y);
+
+            int size = GetTargetSize();
+            if (x2 > size)
+            {
+                x2 = size;
+            }
+            if (y2 > size)
+            {
+                y2 = size;
+            }
+
+            var w = x2 - x1;
+            var h = y2 - y1;
+
+            return new Rectangle(x1, y1, w, h);
         }
     }
 }
