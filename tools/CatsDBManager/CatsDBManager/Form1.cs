@@ -55,11 +55,12 @@ namespace CatsDBManager
             InitBreeds();
             //buttonLoadBreeds_Click(null, null);
             //InitUnlinkedBreeds();
-            //InitApproveLists();
+            InitApproveLists();
             InitDataItems();
             InitImages();
             LoadData();
             //InitDuplicates();
+            UpdateImagesPanels();
             isAppLoaded = true;
         }
 
@@ -167,7 +168,7 @@ namespace CatsDBManager
 
             var imageList = new ImageList();
             imageList.ImageSize = size;
-            imageList.ColorDepth = ColorDepth.Depth16Bit;
+            imageList.ColorDepth = ColorDepth.Depth32Bit;
             int index = 0;
             foreach (var file in files)
             {
@@ -179,7 +180,6 @@ namespace CatsDBManager
                 {
                     continue;
                 }
-
 
                 var item = new ListViewImageItem(file);
                 Bitmap img;
@@ -1110,36 +1110,35 @@ namespace CatsDBManager
             }
         }
 
-        private void listViewImages_DrawItem(object sender, DrawListViewItemEventArgs e)
+        private void UpdateImageItem(ListViewItem item)
         {
-            UpdateImageItems();
+            if (item == null)
+            {
+                return;
+            }
+            bool approved = ImagesApproved.Contains(item.Text);
+            bool declined = ImagesDeclined.Contains(item.Text);
 
+            if (approved)
+            {
+                item.BackColor = Color.Green;
+            }
+            if (declined)
+            {
+                item.BackColor = Color.Gray;
+            }
+            if (approved && declined)
+            {
+                item.BackColor = Color.Red;
+                log("There is an error in Approve lists: {0}", item.Text);
+            }
         }
 
         private void UpdateImageItems()
         {
             foreach (var item in listViewImages.Items.Cast<ListViewItem>())
             {
-                if (item == null)
-                {
-                    continue;
-                }
-                bool approved = ImagesApproved.Contains(item.Text);
-                bool declined = ImagesDeclined.Contains(item.Text);
-
-                if (approved)
-                {
-                    item.BackColor = Color.Green;
-                }
-                if (declined)
-                {
-                    item.BackColor = Color.Gray;
-                }
-                if (approved && declined)
-                {
-                    item.BackColor = Color.Red;
-                    log("There is an error in Approve lists: {0}", item.Text);
-                }
+                UpdateImageItem(item);
             }
         }
 
@@ -1422,6 +1421,92 @@ namespace CatsDBManager
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var dialog = new FolderBrowserDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    var notCat = "not a cat";
+                    var size = GetTargetSize();
+                    progressBarExport.Maximum = data.Count;
+                    log("creating breed folders...");
+                    var breeds = new List<string>();
+                    if (!checkBoxExportNotCatsOnly.Checked)
+                    {
+                        breeds = getBreeds();
+                    }
+                    breeds.Add(notCat);
+
+                    log("preparing breed folders...");
+                    foreach (string breed in breeds)
+                    {
+                        var breedPath = Path.Combine(dialog.SelectedPath, breed);
+                        if (Directory.Exists(breedPath))
+                        {
+                            Directory.Delete(breedPath, true);
+                            log("deleted {0}", breed);
+                        }
+                        if (!Directory.Exists(breedPath))
+                        {
+                            Directory.CreateDirectory(breedPath);
+                            log("created {0}", breed);
+                        }
+                    }
+                    log("saving not cats...");
+                    int imageIndex = 0;
+                    progressBarExport.Value = 0;
+                    foreach (KeyValuePair<string, DataItem> pair in data)
+                    {
+                        var item = pair.Value;
+                        var outputImages = item.GetOutputBackImages(size, checkBoxCropMin.Checked, GetRotationStep());
+
+                        int index = 0;
+                        foreach (Image image in outputImages.Images)
+                        {
+                            var file = Path.Combine(dialog.SelectedPath, notCat, String.Format("not_{0}_{1}", index++, pair.Key));
+                            image.Save(file);
+                        }
+                        item.ClearCache();
+                        progressBarExport.Value = imageIndex++;
+                    }
+                    if (checkBoxExportNotCatsOnly.Checked)
+                    {
+                        log("done");
+                        return;
+                    }
+                    log("saving images...");
+                    imageIndex = 0;
+                    progressBarExport.Value = 0;
+                    foreach (KeyValuePair<string, DataItem> pair in data)
+                    {
+                        if (!ImagesDeclined.Contains(pair.Key))
+                        {
+                            var outputImages = pair.Value.GetOutputImages(size, checkBoxCropMin.Checked, GetRotationStep());
+
+                            int index = 0;
+                            foreach (Image image in outputImages.Images)
+                            {
+                                var file = Path.Combine(dialog.SelectedPath, pair.Value.breed, String.Format("{0}_{1}", index++, pair.Key));
+                                image.Save(file);
+                            }
+                        }
+                        progressBarExport.Value = imageIndex++;
+                        pair.Value.ClearCache();
+                    }
+                    log("done");
+                }
+            }
+            finally {
+
+            }
+            //catch (Exception ex)
+            //{
+            //    log(ex);
+            //}
+        }
+
+        private void buttonExport_ClickOld(object sender, EventArgs e)
+        {
             var dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -1492,6 +1577,12 @@ namespace CatsDBManager
 
         private void checkBoxRegions_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateImagesPanels();
+            UpdateImages();
+        }
+
+        private void UpdateImagesPanels()
+        {
             if (checkBoxRegions.Checked)
             {
                 //listViewImages.View = View.Tile;
@@ -1504,10 +1595,14 @@ namespace CatsDBManager
                 trackBarSize.Value = trackBarSize.Maximum;
                 splitContainerImages.SplitterDistance = splitContainerImages.Size.Width;
             }
-            UpdateImages();
         }
 
         private void listViewImages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSelectedImageRegionData();
+        }
+
+        private void LoadSelectedImageRegionData()
         {
             if (listViewImages.SelectedItems.Count > 0)
             {
@@ -1529,6 +1624,7 @@ namespace CatsDBManager
                 listViewPreview.View = View.LargeIcon;
                 var dataItem = GetDataItem(listViewImages.SelectedItems[0].Text);
                 var images = dataItem.GetOutputImages(GetTargetSize(), checkBoxCropMin.Checked, GetRotationStep());
+
                 listViewPreview.LargeImageList = images;
                 listViewPreview.LargeImageList = images;
 
@@ -1538,10 +1634,11 @@ namespace CatsDBManager
                 {
                     listViewPreview.Items.Add(index.ToString(), index++);
                 }
+
             }
         }
 
-        private void LoadRegionsImage(Rectangle? rect = null)
+        private void LoadRegionsImage(RectangleF? rect = null)
         {
             int size = GetTargetSize();
             pictureBoxRegion.Width = size;
@@ -1551,7 +1648,7 @@ namespace CatsDBManager
             if (listViewImages.SelectedItems.Count > 0)
             {
                 var dataItem = GetDataItem(listViewImages.SelectedItems[0].Text);
-                var image = dataItem.GetImageBitmap(size, checkBoxCropMin.Checked);
+                var image = dataItem.GetImageBitmapFromCache(size, checkBoxCropMin.Checked);
                 if (rect.HasValue)
                 {
                     image = ImageHelper.AddRegion(image, rect.Value);
@@ -1577,16 +1674,32 @@ namespace CatsDBManager
         {
             listViewRegions.Items.Clear();
             listViewRegions.View = View.LargeIcon;
-            var images = dataItem.GetRegionImages(GetTargetSize(), checkBoxCropMin.Checked);
-            listViewRegions.LargeImageList = images;
-            listViewRegions.LargeImageList = images;
+            var size = GetTargetSize();
+            var imagesRegions = dataItem.GetRegionImages(size, checkBoxCropMin.Checked);
+            var imagesBack = dataItem.GetRegionBackImages(size, checkBoxCropMin.Checked);
+            var images = new ImageList();
+            images.ImageSize = new Size(size, size);
+            images.ColorDepth = ColorDepth.Depth32Bit;
 
+            images.Images.AddRange(imagesRegions.Images.Cast<Image>().ToArray());
+            images.Images.AddRange(imagesBack.Images.Cast<Image>().ToArray());
+            listViewRegions.LargeImageList = images;
+            listViewRegions.SmallImageList = images;
 
             int index = 0;
-            foreach (var item in listViewRegions.LargeImageList.Images)
+            foreach (var item in imagesRegions.Images)
             {
-                listViewRegions.Items.Add(index.ToString(), index++);
+                var addedItem = listViewRegions.Items.Add(index.ToString(), index++);
+                addedItem.Tag = "region";
+                addedItem.BackColor = Color.White;
             }
+            foreach (var item in imagesBack.Images)
+            {
+                var addedItem = listViewRegions.Items.Add(index.ToString(), index++);
+                addedItem.Tag = "back";
+                addedItem.BackColor = Color.Gray;
+            }
+
         }
 
         private DataItem GetDataItem(string name)
@@ -1614,14 +1727,33 @@ namespace CatsDBManager
         {
             newRegionEnd = new Point(e.X, e.Y);
             isDrawingRegion = false;
-            CreateRegion();
+            CreateRegion(e.Button);
+            LoadSelectedImageRegionData();
         }
 
-        private void CreateRegion()
+        private void CreateRegion(MouseButtons button)
         {
-            var item = GetSelectedDataItem();
-            var rect = item.AddRegion(GetImageRegionRectangle(newRegionStart, newRegionEnd));
-            SaveData();
+            var back = checkBoxRegionBack.Checked || button == MouseButtons.Right;
+
+            try
+            {
+                var item = GetSelectedDataItem();
+                var rect = GetImageRegionRectangle(newRegionStart, newRegionEnd);
+                if (rect.Width == 0 || rect.Height == 0)
+                {
+                    log("Wrong region selected");
+                    log(rect);
+                }
+                else
+                {
+                    item.AddRegion(rect, back);
+                    SaveData();
+                }
+            }
+            catch (Exception e)
+            {
+                log(e);
+            }
         }
 
         private void SaveData()
@@ -1637,6 +1769,11 @@ namespace CatsDBManager
         {
             log("Loading data...");
             var file = Path.Combine(textBoxRootPath.Text, "data.json");
+            if (!File.Exists(file))
+            {
+                log("There is no data to load");
+                return;
+            }
             var json = File.ReadAllText(file);
             var loaded = JsonConvert.DeserializeObject<SortedDictionary<string, DataItem>>(json);
             log("Loaded, applying...");
@@ -1646,6 +1783,7 @@ namespace CatsDBManager
                 if (data.ContainsKey(item.Key))
                 {
                     data[item.Key].regions = item.Value.regions;
+                    data[item.Key].regionsBack = item.Value.regionsBack;
                 }
             }
             log("Applied");
@@ -1662,18 +1800,19 @@ namespace CatsDBManager
 
         private void PreviewRegion()
         {
-            Rectangle rect = GetImageRegionRectangle(newRegionStart, newRegionCurrent);
+            var rect = GetImageRegionRectangle(newRegionStart, newRegionCurrent);
             LoadRegionsImage(rect);
         }
 
-        private Rectangle GetImageRegionRectangle(Point point1, Point point2)
+        private RectangleF GetImageRegionRectangle(Point point1, Point point2, bool square = true)
         {
-            var x1 = Math.Min(point1.X, point2.X);
-            var x2 = Math.Max(point1.X, point2.X);
-            var y1 = Math.Min(point1.Y, point2.Y);
-            var y2 = Math.Max(point1.Y, point2.Y);
+            var x1 = point1.X;
+            var x2 = point2.X;
+            var y1 = point1.Y;
+            var y2 = point2.Y;
 
             int size = GetTargetSize();
+
             if (x2 > size)
             {
                 x2 = size;
@@ -1682,11 +1821,50 @@ namespace CatsDBManager
             {
                 y2 = size;
             }
+            if (x2 <= x1)
+            {
+                x2 = x1 + 1;
+            }
+            if (y2 <= y1)
+            {
+                y2 = y1 + 1;
+            }
 
             var w = x2 - x1;
             var h = y2 - y1;
 
-            return new Rectangle(x1, y1, w, h);
+            if (square)
+            {
+                var dim = Math.Min(w, h);
+                w = dim;
+                h = dim;
+            }
+
+            return new RectangleF((float)x1 / size, (float)y1 / size, (float)w / size, (float)h / size);
+        }
+
+        private void listViewRegions_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //bool status = (e.Button == MouseButtons.Left);
+
+            if (listViewRegions.SelectedItems.Count == 1)
+            {
+                var selection = listViewRegions.SelectedItems[0];
+                var dataItem = GetSelectedDataItem();
+                var src = selection.Tag.ToString();
+                var result = dataItem.DeleteRegion(selection.Text, src);
+                LoadSelectedImageRegionData();
+
+                if (result)
+                {
+                    log("region deleted");
+                    SaveData();
+                }
+                else
+                {
+                    log("Error! Region CANNOT be deleted");
+                }
+            }
         }
     }
 }

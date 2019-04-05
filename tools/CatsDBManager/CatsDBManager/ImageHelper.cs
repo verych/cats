@@ -137,16 +137,21 @@ namespace CatsDBManager
             return ResizeImage(cropped, image.Width, image.Height);
         }
 
-        public static Bitmap AddRegion(Bitmap image, Rectangle rect)
+        public static Bitmap AddRegion(Bitmap image, RectangleF rect)
         {
             Bitmap newImage = new Bitmap(image.Width, image.Height);
             using (Graphics g = Graphics.FromImage(newImage))
             {
                 g.DrawImage(image, new Point(0, 0));
                 Pen pen = new Pen(Color.Yellow);
-                g.DrawRectangle(pen, rect);
+                g.DrawRectangle(pen, TranslatePercentsToSize(rect, image.Width));
             }
             return newImage;
+        }
+
+        public static Rectangle TranslatePercentsToSize(RectangleF rect, int size)
+        {
+            return new Rectangle((int) (rect.X * size), (int) (rect.Y * size), (int) (rect.Width * size), (int) (rect.Height * size));
         }
     }
 }

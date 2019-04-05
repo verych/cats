@@ -84,6 +84,9 @@
             this.listViewImages = new System.Windows.Forms.ListView();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.checkBoxRegionBack = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listViewRegions = new System.Windows.Forms.ListView();
             this.pictureBoxRegion = new System.Windows.Forms.PictureBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.listViewPreview = new System.Windows.Forms.ListView();
@@ -103,7 +106,8 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.buttonExport = new System.Windows.Forms.Button();
             this.listBoxLog = new System.Windows.Forms.ListBox();
-            this.listViewRegions = new System.Windows.Forms.ListView();
+            this.progressBarExport = new System.Windows.Forms.ProgressBar();
+            this.checkBoxExportNotCatsOnly = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -182,7 +186,7 @@
             this.textBoxRotationStep.Name = "textBoxRotationStep";
             this.textBoxRotationStep.Size = new System.Drawing.Size(294, 26);
             this.textBoxRotationStep.TabIndex = 12;
-            this.textBoxRotationStep.Text = "15";
+            this.textBoxRotationStep.Text = "120";
             // 
             // label6
             // 
@@ -809,6 +813,8 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.checkBoxRegionBack);
+            this.tabPage8.Controls.Add(this.label7);
             this.tabPage8.Controls.Add(this.listViewRegions);
             this.tabPage8.Controls.Add(this.pictureBoxRegion);
             this.tabPage8.Location = new System.Drawing.Point(4, 29);
@@ -818,6 +824,37 @@
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "Regions";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRegionBack
+            // 
+            this.checkBoxRegionBack.AutoSize = true;
+            this.checkBoxRegionBack.Location = new System.Drawing.Point(16, 26);
+            this.checkBoxRegionBack.Name = "checkBoxRegionBack";
+            this.checkBoxRegionBack.Size = new System.Drawing.Size(177, 24);
+            this.checkBoxRegionBack.TabIndex = 11;
+            this.checkBoxRegionBack.Text = "Background regions";
+            this.checkBoxRegionBack.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(513, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(163, 20);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Double click to Delete";
+            // 
+            // listViewRegions
+            // 
+            this.listViewRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewRegions.Location = new System.Drawing.Point(517, 39);
+            this.listViewRegions.Name = "listViewRegions";
+            this.listViewRegions.Size = new System.Drawing.Size(392, 253);
+            this.listViewRegions.TabIndex = 9;
+            this.listViewRegions.UseCompatibleStateImageBehavior = false;
+            this.listViewRegions.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewRegions_MouseDoubleClick);
             // 
             // pictureBoxRegion
             // 
@@ -1014,6 +1051,8 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.checkBoxExportNotCatsOnly);
+            this.tabPage7.Controls.Add(this.progressBarExport);
             this.tabPage7.Controls.Add(this.buttonExport);
             this.tabPage7.Location = new System.Drawing.Point(4, 29);
             this.tabPage7.Name = "tabPage7";
@@ -1025,8 +1064,7 @@
             // 
             // buttonExport
             // 
-            this.buttonExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExport.Location = new System.Drawing.Point(957, 383);
+            this.buttonExport.Location = new System.Drawing.Point(9, 8);
             this.buttonExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(112, 35);
@@ -1047,16 +1085,24 @@
             this.listBoxLog.Size = new System.Drawing.Size(1451, 224);
             this.listBoxLog.TabIndex = 1;
             // 
-            // listViewRegions
+            // progressBarExport
             // 
-            this.listViewRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBarExport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewRegions.Location = new System.Drawing.Point(517, 6);
-            this.listViewRegions.Name = "listViewRegions";
-            this.listViewRegions.Size = new System.Drawing.Size(392, 286);
-            this.listViewRegions.TabIndex = 9;
-            this.listViewRegions.UseCompatibleStateImageBehavior = false;
+            this.progressBarExport.Location = new System.Drawing.Point(9, 405);
+            this.progressBarExport.Name = "progressBarExport";
+            this.progressBarExport.Size = new System.Drawing.Size(1426, 23);
+            this.progressBarExport.TabIndex = 3;
+            // 
+            // checkBoxExportNotCatsOnly
+            // 
+            this.checkBoxExportNotCatsOnly.AutoSize = true;
+            this.checkBoxExportNotCatsOnly.Location = new System.Drawing.Point(9, 51);
+            this.checkBoxExportNotCatsOnly.Name = "checkBoxExportNotCatsOnly";
+            this.checkBoxExportNotCatsOnly.Size = new System.Drawing.Size(174, 24);
+            this.checkBoxExportNotCatsOnly.TabIndex = 4;
+            this.checkBoxExportNotCatsOnly.Text = "Export not cats only";
+            this.checkBoxExportNotCatsOnly.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1099,6 +1145,7 @@
             this.splitContainerImages.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegion)).EndInit();
             this.tabPage9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).EndInit();
@@ -1107,6 +1154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSimilarity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDuplicate)).EndInit();
             this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1188,6 +1236,10 @@
         private System.Windows.Forms.TextBox textBoxRotationStep;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListView listViewRegions;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBoxRegionBack;
+        private System.Windows.Forms.ProgressBar progressBarExport;
+        private System.Windows.Forms.CheckBox checkBoxExportNotCatsOnly;
     }
 }
 
