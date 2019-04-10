@@ -104,10 +104,21 @@
             this.listViewDuplicates = new System.Windows.Forms.ListView();
             this.buttonSearchDuplicates = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.checkBoxExportSelected = new System.Windows.Forms.CheckBox();
+            this.listBoxExport = new System.Windows.Forms.ListBox();
+            this.checkBoxExportNotCatsOnly = new System.Windows.Forms.CheckBox();
+            this.progressBarExport = new System.Windows.Forms.ProgressBar();
             this.buttonExport = new System.Windows.Forms.Button();
             this.listBoxLog = new System.Windows.Forms.ListBox();
-            this.progressBarExport = new System.Windows.Forms.ProgressBar();
-            this.checkBoxExportNotCatsOnly = new System.Windows.Forms.CheckBox();
+            this.checkBoxHideDeclined = new System.Windows.Forms.CheckBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.buttonImportFrom = new System.Windows.Forms.Button();
+            this.textBoxImportFrom = new System.Windows.Forms.TextBox();
+            this.textBoxImportTo = new System.Windows.Forms.TextBox();
+            this.buttonImportTo = new System.Windows.Forms.Button();
+            this.buttonImportRun = new System.Windows.Forms.Button();
+            this.dataGridViewExport = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -141,6 +152,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSimilarity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDuplicate)).BeginInit();
             this.tabPage7.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExport)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -236,7 +249,7 @@
             this.textBoxRootPath.Name = "textBoxRootPath";
             this.textBoxRootPath.Size = new System.Drawing.Size(842, 26);
             this.textBoxRootPath.TabIndex = 1;
-            this.textBoxRootPath.Text = "../../../../../";
+            this.textBoxRootPath.Text = "../../../../../../";
             // 
             // label1
             // 
@@ -273,6 +286,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox10);
             this.tabPage3.Controls.Add(this.buttonZero);
             this.tabPage3.Controls.Add(this.groupBox9);
             this.tabPage3.Controls.Add(this.groupBox8);
@@ -294,10 +308,10 @@
             // 
             // buttonZero
             // 
-            this.buttonZero.Location = new System.Drawing.Point(392, 389);
+            this.buttonZero.Location = new System.Drawing.Point(188, 386);
             this.buttonZero.Margin = new System.Windows.Forms.Padding(2);
             this.buttonZero.Name = "buttonZero";
-            this.buttonZero.Size = new System.Drawing.Size(206, 28);
+            this.buttonZero.Size = new System.Drawing.Size(130, 31);
             this.buttonZero.TabIndex = 8;
             this.buttonZero.Text = "Remove 0-bites";
             this.buttonZero.UseVisualStyleBackColor = true;
@@ -749,6 +763,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.checkBoxHideDeclined);
             this.tabPage5.Controls.Add(this.splitContainerImages);
             this.tabPage5.Controls.Add(this.checkBoxRegions);
             this.tabPage5.Controls.Add(this.checkBoxHideReviewed);
@@ -891,7 +906,7 @@
             // checkBoxRegions
             // 
             this.checkBoxRegions.AutoSize = true;
-            this.checkBoxRegions.Location = new System.Drawing.Point(161, 68);
+            this.checkBoxRegions.Location = new System.Drawing.Point(287, 69);
             this.checkBoxRegions.Name = "checkBoxRegions";
             this.checkBoxRegions.Size = new System.Drawing.Size(94, 24);
             this.checkBoxRegions.TabIndex = 5;
@@ -1051,6 +1066,10 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button1);
+            this.tabPage7.Controls.Add(this.dataGridViewExport);
+            this.tabPage7.Controls.Add(this.checkBoxExportSelected);
+            this.tabPage7.Controls.Add(this.listBoxExport);
             this.tabPage7.Controls.Add(this.checkBoxExportNotCatsOnly);
             this.tabPage7.Controls.Add(this.progressBarExport);
             this.tabPage7.Controls.Add(this.buttonExport);
@@ -1061,6 +1080,48 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Export";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxExportSelected
+            // 
+            this.checkBoxExportSelected.AutoSize = true;
+            this.checkBoxExportSelected.Location = new System.Drawing.Point(12, 81);
+            this.checkBoxExportSelected.Name = "checkBoxExportSelected";
+            this.checkBoxExportSelected.Size = new System.Drawing.Size(177, 24);
+            this.checkBoxExportSelected.TabIndex = 6;
+            this.checkBoxExportSelected.Text = "Export selected only";
+            this.checkBoxExportSelected.UseVisualStyleBackColor = true;
+            this.checkBoxExportSelected.CheckedChanged += new System.EventHandler(this.checkBoxExportSelected_CheckedChanged);
+            // 
+            // listBoxExport
+            // 
+            this.listBoxExport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBoxExport.FormattingEnabled = true;
+            this.listBoxExport.ItemHeight = 20;
+            this.listBoxExport.Location = new System.Drawing.Point(9, 127);
+            this.listBoxExport.Name = "listBoxExport";
+            this.listBoxExport.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBoxExport.Size = new System.Drawing.Size(464, 264);
+            this.listBoxExport.TabIndex = 5;
+            // 
+            // checkBoxExportNotCatsOnly
+            // 
+            this.checkBoxExportNotCatsOnly.AutoSize = true;
+            this.checkBoxExportNotCatsOnly.Location = new System.Drawing.Point(12, 51);
+            this.checkBoxExportNotCatsOnly.Name = "checkBoxExportNotCatsOnly";
+            this.checkBoxExportNotCatsOnly.Size = new System.Drawing.Size(174, 24);
+            this.checkBoxExportNotCatsOnly.TabIndex = 4;
+            this.checkBoxExportNotCatsOnly.Text = "Export not cats only";
+            this.checkBoxExportNotCatsOnly.UseVisualStyleBackColor = true;
+            // 
+            // progressBarExport
+            // 
+            this.progressBarExport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBarExport.Location = new System.Drawing.Point(9, 405);
+            this.progressBarExport.Name = "progressBarExport";
+            this.progressBarExport.Size = new System.Drawing.Size(1426, 23);
+            this.progressBarExport.TabIndex = 3;
             // 
             // buttonExport
             // 
@@ -1085,24 +1146,104 @@
             this.listBoxLog.Size = new System.Drawing.Size(1451, 224);
             this.listBoxLog.TabIndex = 1;
             // 
-            // progressBarExport
+            // checkBoxHideDeclined
             // 
-            this.progressBarExport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.checkBoxHideDeclined.AutoSize = true;
+            this.checkBoxHideDeclined.Location = new System.Drawing.Point(143, 68);
+            this.checkBoxHideDeclined.Name = "checkBoxHideDeclined";
+            this.checkBoxHideDeclined.Size = new System.Drawing.Size(131, 24);
+            this.checkBoxHideDeclined.TabIndex = 7;
+            this.checkBoxHideDeclined.Text = "Hide declined";
+            this.checkBoxHideDeclined.UseVisualStyleBackColor = true;
+            this.checkBoxHideDeclined.CheckedChanged += new System.EventHandler(this.checkBoxHideDeclined_CheckedChanged);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarExport.Location = new System.Drawing.Point(9, 405);
-            this.progressBarExport.Name = "progressBarExport";
-            this.progressBarExport.Size = new System.Drawing.Size(1426, 23);
-            this.progressBarExport.TabIndex = 3;
+            this.groupBox10.Controls.Add(this.buttonImportRun);
+            this.groupBox10.Controls.Add(this.textBoxImportTo);
+            this.groupBox10.Controls.Add(this.buttonImportTo);
+            this.groupBox10.Controls.Add(this.textBoxImportFrom);
+            this.groupBox10.Controls.Add(this.buttonImportFrom);
+            this.groupBox10.Location = new System.Drawing.Point(353, 82);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(1082, 178);
+            this.groupBox10.TabIndex = 9;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Import";
             // 
-            // checkBoxExportNotCatsOnly
+            // buttonImportFrom
             // 
-            this.checkBoxExportNotCatsOnly.AutoSize = true;
-            this.checkBoxExportNotCatsOnly.Location = new System.Drawing.Point(9, 51);
-            this.checkBoxExportNotCatsOnly.Name = "checkBoxExportNotCatsOnly";
-            this.checkBoxExportNotCatsOnly.Size = new System.Drawing.Size(174, 24);
-            this.checkBoxExportNotCatsOnly.TabIndex = 4;
-            this.checkBoxExportNotCatsOnly.Text = "Export not cats only";
-            this.checkBoxExportNotCatsOnly.UseVisualStyleBackColor = true;
+            this.buttonImportFrom.Location = new System.Drawing.Point(20, 37);
+            this.buttonImportFrom.Name = "buttonImportFrom";
+            this.buttonImportFrom.Size = new System.Drawing.Size(122, 31);
+            this.buttonImportFrom.TabIndex = 0;
+            this.buttonImportFrom.Text = "From folder";
+            this.buttonImportFrom.UseVisualStyleBackColor = true;
+            this.buttonImportFrom.Click += new System.EventHandler(this.buttonImportFrom_Click);
+            // 
+            // textBoxImportFrom
+            // 
+            this.textBoxImportFrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxImportFrom.Location = new System.Drawing.Point(148, 39);
+            this.textBoxImportFrom.Name = "textBoxImportFrom";
+            this.textBoxImportFrom.Size = new System.Drawing.Size(928, 26);
+            this.textBoxImportFrom.TabIndex = 1;
+            // 
+            // textBoxImportTo
+            // 
+            this.textBoxImportTo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxImportTo.Location = new System.Drawing.Point(148, 76);
+            this.textBoxImportTo.Name = "textBoxImportTo";
+            this.textBoxImportTo.Size = new System.Drawing.Size(928, 26);
+            this.textBoxImportTo.TabIndex = 3;
+            // 
+            // buttonImportTo
+            // 
+            this.buttonImportTo.Location = new System.Drawing.Point(20, 74);
+            this.buttonImportTo.Name = "buttonImportTo";
+            this.buttonImportTo.Size = new System.Drawing.Size(122, 31);
+            this.buttonImportTo.TabIndex = 2;
+            this.buttonImportTo.Text = "To folder";
+            this.buttonImportTo.UseVisualStyleBackColor = true;
+            this.buttonImportTo.Click += new System.EventHandler(this.buttonImportTo_Click);
+            // 
+            // buttonImportRun
+            // 
+            this.buttonImportRun.Location = new System.Drawing.Point(20, 127);
+            this.buttonImportRun.Name = "buttonImportRun";
+            this.buttonImportRun.Size = new System.Drawing.Size(122, 31);
+            this.buttonImportRun.TabIndex = 4;
+            this.buttonImportRun.Text = "Run";
+            this.buttonImportRun.UseVisualStyleBackColor = true;
+            this.buttonImportRun.Click += new System.EventHandler(this.buttonImportRun_Click);
+            // 
+            // dataGridViewExport
+            // 
+            this.dataGridViewExport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewExport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewExport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExport.Location = new System.Drawing.Point(489, 127);
+            this.dataGridViewExport.Name = "dataGridViewExport";
+            this.dataGridViewExport.RowTemplate.Height = 28;
+            this.dataGridViewExport.Size = new System.Drawing.Size(932, 263);
+            this.dataGridViewExport.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(489, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 35);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Update report";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -1155,6 +1296,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDuplicate)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1240,6 +1384,17 @@
         private System.Windows.Forms.CheckBox checkBoxRegionBack;
         private System.Windows.Forms.ProgressBar progressBarExport;
         private System.Windows.Forms.CheckBox checkBoxExportNotCatsOnly;
+        private System.Windows.Forms.ListBox listBoxExport;
+        private System.Windows.Forms.CheckBox checkBoxExportSelected;
+        private System.Windows.Forms.CheckBox checkBoxHideDeclined;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TextBox textBoxImportFrom;
+        private System.Windows.Forms.Button buttonImportFrom;
+        private System.Windows.Forms.Button buttonImportRun;
+        private System.Windows.Forms.TextBox textBoxImportTo;
+        private System.Windows.Forms.Button buttonImportTo;
+        private System.Windows.Forms.DataGridView dataGridViewExport;
+        private System.Windows.Forms.Button button1;
     }
 }
 

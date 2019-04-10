@@ -145,7 +145,7 @@ namespace CatsDBManager
             var result = new ImageList();
             result.ImageSize = new Size(size, size);
             result.ColorDepth = ColorDepth.Depth32Bit;
-            var image = GetImageBitmap(cropMinimum);
+            var image = GetImageBitmapFromCache(cropMinimum);
 
             //validation
             for (var i = regions.Count - 1; i >= 0; i--)
@@ -161,7 +161,7 @@ namespace CatsDBManager
 
             foreach (var region in regions)
             {
-                var regionImage = GetRegion(size, cropMinimum, region);
+                var regionImage = GetRegionFromCache(size, cropMinimum, region);
                 result.Images.Add(regionImage);
             }
 
@@ -187,7 +187,7 @@ namespace CatsDBManager
 
             foreach (var region in regionsBack)
             {
-                var regionImage = GetRegion(size, cropMinimum, region);
+                var regionImage = GetRegionFromCache(size, cropMinimum, region);
                 result.Images.Add(regionImage);
             }
 

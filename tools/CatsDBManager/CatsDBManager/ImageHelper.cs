@@ -153,5 +153,34 @@ namespace CatsDBManager
         {
             return new Rectangle((int) (rect.X * size), (int) (rect.Y * size), (int) (rect.Width * size), (int) (rect.Height * size));
         }
+
+        public static Bitmap FitImage(Bitmap bitmap, Size size)
+        {
+            var newSize = new Size();
+            if (bitmap.Width > bitmap.Height)
+            {
+                double k = (double)bitmap.Width / size.Width;
+                newSize.Width = size.Width;
+                newSize.Height = (int)Math.Round(bitmap.Height / k);
+            }
+            else
+            {
+                double k = (double)bitmap.Height / size.Height;
+                newSize.Height = size.Height;
+                newSize.Width = (int)Math.Round(bitmap.Width / k);
+            }
+            var resized = new Bitmap(bitmap, newSize);
+            var blank = new Bitmap(size.Width, size.Height);
+            CopyRegionIntoImage(resized, new Rectangle(new Point(0, 0), size), ref blank, new Rectangle(new Point(0, 0), size));
+            return blank;
+        }
+
+        public static void CopyRegionIntoImage(Bitmap srcBitmap, Rectangle srcRegion, ref Bitmap destBitmap, Rectangle destRegion)
+        {
+            using (Graphics grD = Graphics.FromImage(destBitmap))
+            {
+                grD.DrawImage(srcBitmap, destRegion, srcRegion, GraphicsUnit.Pixel);
+            }
+        }
     }
 }

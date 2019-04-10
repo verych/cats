@@ -966,6 +966,7 @@
     <aliases>
       <alias>poodle cat</alias>
       <alias>poodle_cat</alias>
+      <alias>poodle</alias>
     </aliases>
   </breed>
   <breed name="Scottish Straight" code="scottish straight" xmlns="">
@@ -1150,6 +1151,26 @@
   <breed name="Serval" code="serval" xmlns="">
     <aliases>
       <alias>serval</alias>
+    </aliases>
+  </breed>
+  <breed name="!Belchik" code="!belchik" xmlns="">
+    <aliases>
+      <alias>!belchik</alias>
+    </aliases>
+  </breed>
+  <breed name="!Jack" code="!jack" xmlns="">
+    <aliases>
+      <alias>!jack</alias>
+    </aliases>
+  </breed>
+  <breed name="!Malysh" code="!malysh" xmlns="">
+    <aliases>
+      <alias>!malysh</alias>
+    </aliases>
+  </breed>
+  <breed name="!Sonya" code="!sonya" xmlns="">
+    <aliases>
+      <alias>!sonya</alias>
     </aliases>
   </breed>
 </breeds>
