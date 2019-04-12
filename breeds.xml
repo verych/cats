@@ -82,14 +82,10 @@
     <aliases>
       <alias>asian</alias>
       <alias>aziatskaja_koshka_cvetnoe_velikolepie</alias>
-    </aliases>
-  </breed>
-  <breed name="Asian Semi-longhair" code="asian semi-longhair" xmlns="">
-    <aliases>
-      <alias>asian semi longhair</alias>
-      <alias>asian-semi-longhair</alias>
-      <alias>asian_semi_longhair</alias>
-      <alias>asian semi-longhair</alias>
+      <alias>asian_tabby</alias>
+      <alias>asian_shorthair</alias>
+      <alias>aziatskayatabbi</alias>
+      <alias>aziatskaya-tabbi</alias>
     </aliases>
   </breed>
   <breed name="Balinese" code="balinese" xmlns="">
@@ -860,15 +856,7 @@
     <aliases>
       <alias>asian longhair</alias>
       <alias>asian_longhair</alias>
-    </aliases>
-  </breed>
-  <breed name="Asian Shorthair" code="asian shorthair" xmlns="">
-    <aliases>
-      <alias>asian shorthair</alias>
-      <alias>asian_shorthair</alias>
-      <alias>asian_tabby</alias>
-      <alias>aziatskayatabbi</alias>
-      <alias>aziatskaya-tabbi</alias>
+      <alias>asian semi-longhair</alias>
     </aliases>
   </breed>
   <breed name="Asian Smoke" code="asian smoke" xmlns="">
