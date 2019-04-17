@@ -1483,7 +1483,7 @@ namespace CatsDBManager
                                 continue;
                             }
                         }
-                        if (!ImagesDeclined.Contains(pair.Key))
+                        if ((checkBoxNotDeclined.Checked && !ImagesDeclined.Contains(pair.Key)) || (checkBoxExportApproved.Checked && ImagesApproved.Contains(pair.Key)))
                         {
                             var outputImages = pair.Value.GetOutputImages(size, checkBoxCropMin.Checked, GetRotationStep());
 
@@ -1930,6 +1930,9 @@ namespace CatsDBManager
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var itemSize = 0.118f;
+            int grandTotal = 0;
+
             var dataSource = new DataTable();
             dataSource.Columns.Add("breed");
             dataSource.Columns.Add("waiting", typeof(int));
@@ -1957,7 +1960,7 @@ namespace CatsDBManager
                         approved += a ? 1: 0;
                         declined += d ? 1: 0;
                         waiting += (!a && !d) ? 1 : 0;
-                        if (a)
+                        if ((checkBoxNotDeclined.Checked && !d || (checkBoxExportApproved.Checked && a)))
                         {
                             total += 1 + item.regions.Count;
                         }
@@ -1965,8 +1968,10 @@ namespace CatsDBManager
                     exportRotated = total * rotationK;
                 }
                 dataSource.Rows.Add(breed, waiting, approved, declined, total, exportRotated);
+                grandTotal += exportRotated;
             }
             dataGridViewExport.DataSource = dataSource;
+            labelExportInfo.Text = String.Format("Info: total {0} files ({1} Mb)", grandTotal, Math.Round(grandTotal * itemSize));
         }
     }
 }
